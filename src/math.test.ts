@@ -1,10 +1,18 @@
-describe("Setup and teardown", () => {
+describe("All hooks", () => {
+  beforeAll(() => {
+    console.log("Before ALL tests");
+  });
+
+  afterAll(() => {
+    console.log("After ALL tests");
+  });
+
   beforeEach(() => {
-    console.log("Before each test");
+    console.log("Before EACH test");
   });
 
   afterEach(() => {
-    console.log("After each test");
+    console.log("After EACH test");
   });
 
   test("first test", () => {

@@ -1,11 +1,19 @@
-describe('String functions', () => {
-  test('contain', () => {
-    expect('Typescript is powerful',).toContain('Typescript');
+import { divide } from "./divide";
+
+describe("divide function", () => {
+  test("normal division", () => {
+    expect(10 / 2).toBe(5);
   });
-  test('length', () => {
-    expect('jest').toHaveLength(4);
+
+  test("normal division", () => {
+    expect(20 / 4).toBe(5);
   });
-  test('array contains', () => {
-    expect(["React", "Next.js", "React Native"]).toContain('React Native');
+
+  test("normal division", () => {
+    expect(0 / 5).toBe(0);
+  });
+
+  test("throws an error when dividing by zero", () => {
+    expect(() => divide(5, 0)).toThrow();
   });
 });

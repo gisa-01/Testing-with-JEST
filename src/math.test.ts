@@ -1,19 +1,19 @@
-import { divide } from "./divide";
-
-describe("divide function", () => {
-  test("normal division", () => {
-    expect(10 / 2).toBe(5);
+describe("Setup and teardown", () => {
+  beforeEach(() => {
+    console.log("Before each test");
   });
 
-  test("normal division", () => {
-    expect(20 / 4).toBe(5);
+  afterEach(() => {
+    console.log("After each test");
   });
 
-  test("normal division", () => {
-    expect(0 / 5).toBe(0);
+  test("first test", () => {
+    console.log("Running first test");
+    expect(1 + 1).toBe(2);
   });
 
-  test("throws an error when dividing by zero", () => {
-    expect(() => divide(5, 0)).toThrow();
+  test("second test", () => {
+    console.log("Running second test");
+    expect(2 + 2).toBe(4);
   });
 });

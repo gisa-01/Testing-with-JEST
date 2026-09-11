@@ -1,17 +1,25 @@
-const student = {
+import { describe, test, expect } from "@jest/globals";
+
+const user = {
   name: "Gisa",
-  course: "Computer Science",
+  role: "Developer",
   skills: ["React", "TypeScript", "Jest"],
 };
 
-test('student object', () => {
-  expect(student).toHaveProperty('course', 'Computer Science');
-});
+describe("User", () => {
+  describe("Profile", () => {
+    test("name is Gisa", () => {
+      expect(user).toHaveProperty("name", "Gisa");
+    });
 
-test('student object', () => {
-  expect(student.skills).toContain('TypeScript');
-});
+    test("role is Developer", () => {
+      expect(user).toHaveProperty("role", "Developer");
+    });
+  });
 
-test('student object', () => {
-  expect(student.skills).not.toContain('Pyhton');
+  describe("Skills", () => {
+    test("contains TypeScript", () => {
+      expect(user.skills).toContain("TypeScript");
+    });
+  });
 });

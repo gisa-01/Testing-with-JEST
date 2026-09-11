@@ -1,27 +1,17 @@
-describe("All hooks", () => {
-  beforeAll(() => {
-    console.log("Before ALL tests");
-  });
+const student = {
+  name: "Gisa",
+  course: "Computer Science",
+  skills: ["React", "TypeScript", "Jest"],
+};
 
-  afterAll(() => {
-    console.log("After ALL tests");
-  });
+test('student object', () => {
+  expect(student).toHaveProperty('course', 'Computer Science');
+});
 
-  beforeEach(() => {
-    console.log("Before EACH test");
-  });
+test('student object', () => {
+  expect(student.skills).toContain('TypeScript');
+});
 
-  afterEach(() => {
-    console.log("After EACH test");
-  });
-
-  test("first test", () => {
-    console.log("Running first test");
-    expect(1 + 1).toBe(2);
-  });
-
-  test("second test", () => {
-    console.log("Running second test");
-    expect(2 + 2).toBe(4);
-  });
+test('student object', () => {
+  expect(student.skills).not.toContain('Pyhton');
 });
